@@ -1,0 +1,3 @@
+server/node_modules
+server/src/.env
+server/src/public/img

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Member</title>
+    <link href="css/globals.css" rel="stylesheet">
+    <link href="css/add-member.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="add-member.html">Add Member</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form class="form">
+        <div class="form__nickname formSection">
+            <label>Nickname</label>
+            <input id="inputNickname" type="text" placeholder="Username...">
+        </div>
+
+        <div class="form__rol formSection">
+            <label>Rol</label>
+            <select id="selectRol">
+                <option selected disabled>Select...</option>
+                <option value="leaders">Leaders</option>
+                <option value="staff">Staff</option>
+            </select>
+        </div>
+
+        <div class="form__rank formSection">
+            <label>Rank</label>
+            <input id="inputRank" type="text" placeholder="Rank...">
+        </div>
+
+        <div class="form__img formSection">
+            <label for="inputFile">Img</label>
+            <span id="inputSpan">Select a IMG...</span>
+
+            <input id="inputFile" type="file" style="display: none;">
+        </div>
+
+        <div class="form__preview formSection">
+            <img id="form__preview-img">
+        </div>
+
+        <button type="submit">Edit Member</button>
+    </form>
+
+    <script src="js/edit-member.js"></script>
+</body>
+</html>

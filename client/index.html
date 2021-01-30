@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="css/globals.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="add-member.html">Add Member</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form__editMember">
+
+        <i class="form__times fas fa-times"></i>
+
+        <form class="form">
+            <div class="form__nickname formSection">
+                <label>Nickname</label>
+                <input id="inputNickname" type="text" placeholder="Username...">
+            </div>
+    
+            <div class="form__rol formSection">
+                <label>Rol</label>
+                <select id="selectRol">
+                    <option selected disabled>Select...</option>
+                    <option value="leaders">Leader</option>
+                    <option value="staff">Staff</option>
+                    <option value="advanced-members">Advanced Members</option>
+                    <option value="members">Member</option>
+                    <option value="trials">Trial</option>
+                </select>
+            </div>
+    
+            <div class="form__rank formSection">
+                <label>Rank</label>
+                <input id="inputRank" type="text" placeholder="Rank...">
+            </div>
+    
+            <div class="form__img formSection">
+                <label for="inputFile">Img</label>
+                <span id="inputSpan">Select a IMG...</span>
+    
+                <input id="inputFile" type="file" style="display: none;">
+            </div>
+    
+            <div class="form__preview formSection">
+                <img id="form__preview-img">
+            </div>
+    
+            <button type="submit">Edit Member</button>
+        </form>
+
+        <button class="deleteMemberBTN" type="button">Delete Member</button>
+    </div>
+
+    <div class="content">
+
+        <div class="leaders">
+        
+            <h3 class="leaders__title titleProperties">Leaders</h3>
+            <div id="leaders__grid" class="grid"></div>
+
+        </div>
+
+        <div class="staff">
+
+            <h3 class="staff__title titleProperties">Staff</h3>
+            <div id="staff__grid" class="grid"></div>
+        </div>
+
+        <div class="advanced-members">
+
+            <h3 class="advanced-members__title titleProperties">Advanced Members</h3>
+            <div id="advanced-members__grid" class="grid"></div>
+        </div>
+
+        <div class="members">
+            <h3 class="members__title titleProperties">Members</h3>
+            <div id="members__grid" class="grid"></div>
+        </div>
+
+        <div class="trials">
+            <h3 class="trials__title titleProperties">Trials</h3>
+            <div id="trials__grid" class="grid"></div>
+        </div>
+
+
+
+    </div>
+    <script src="js/home.js"></script>
+    <script src="js/edit-member.js"></script>
+</body>
+</html>

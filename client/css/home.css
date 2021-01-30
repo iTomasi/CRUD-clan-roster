@@ -1,0 +1,204 @@
+.form__editMember {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.form {
+    background: #1F2833;
+    color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.form__times {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #f9f9f9;
+    cursor: pointer;
+}
+
+.formSection {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form__img {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form__img label {
+    margin-bottom: 0;
+    padding: 5px;
+    background: #66FCF1;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000
+}
+
+.form__preview {
+    display: none;
+}
+
+.form input,
+.form select {
+    background: #0B0C10;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #f9f9f9;
+    width: 80%;
+}
+
+.form button {
+    width: 70%;
+    background: transparent;
+    border: 2px solid #66FCF1;
+    outline: none;
+    font-size: 20px;
+    color: #f9f9f9;
+    min-height: 35px;
+    cursor: pointer;
+}
+
+.deleteMemberBTN {
+    width: 200px;
+    background: #FA5C5C;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    min-height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.content {
+    padding-bottom: 30px;
+}
+
+.titleProperties {
+    max-width: 800px;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.player {
+    background: rgba(0, 0, 0, 0.5);
+    color: #f9f9f9;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+    position: relative;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.player__edit {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 30px;
+    color: #EEFA5C;
+    cursor: pointer;
+    transform: scale(0);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.player:hover {
+    transform: scale(1.03);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.player:hover .player__edit {
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.player img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1000px;
+}
+
+.leaders__title {
+    background: #FA5C5C;
+}
+
+.player__name-leaders {
+    color: #FA5C5C;
+    margin: 10px 0;
+}
+
+.staff__title {
+    background: #0088ff;
+}
+
+.player__name-staff {
+    color: #0088ff;
+}
+
+.advanced-members__title {
+    background: #8CFA5C;
+}
+
+.player__name-advanced-members {
+    color: #8CFA5C;
+}
+
+.members__title {
+    background: #0033FF;
+}
+
+.player__name-members {
+    color: #3300FF;
+}
+
+.trials__title {
+    background: #FA5CE4;
+}
+
+.player__name-trials {
+    color: #FA5CE4;
+}
