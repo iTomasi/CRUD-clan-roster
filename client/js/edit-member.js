@@ -35,6 +35,18 @@ $content.addEventListener("click", e => {
     }
 })
 
+$inputFile.addEventListener("change", () => {
+    const fileName = $inputFile.files[0].name;
+
+    if (fileName.length >= 11) {
+        $inputSpan.textContent = fileName.substring(0, 13) + ".."
+    }
+
+    else {
+        $inputSpan.textContent = fileName
+    }
+})
+
 $form.addEventListener("submit", e => {
     e.preventDefault();
 
@@ -51,8 +63,13 @@ $form.addEventListener("submit", e => {
     })
         .then(res => res.json())
         .then(res => {
-            console.log(res)
-            location.reload();
+            if (res.message === "ERROR :(") {
+                console.log(res)
+            }
+
+            else {
+                location.reload();
+            }
         })
 })
 

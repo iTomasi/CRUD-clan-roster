@@ -103,53 +103,61 @@ router.put("/:id", addMember_multer, (req, res) => {
     try {
         fileName = req.file.filename;
 
-        connection.query("SELECT theimg FROM members WHERE id = ?", [id], (err, resp) => {
-            if (err) {
-                console.log(err)
-            }
-    
-            else {
-                connection.query("UPDATE members SET therol = ?, nickname = ?, therank = ?, theimg = ? WHERE id = ?", [therol, nickname, therank, fileName, id], (err, resp2) => {
-                    if (err) {
-                        console.log(err)
-                        res.json({
-                            message: "ERROR :("
-                        })
-                    }
-    
-                    else {
-                        oldImg = resp[0].theimg
-                        fs.unlinkSync(path.join(__dirname, `../public/img/${oldImg}`))
-                        res.json({
-                            message: "UPDATED"
-                        })
-                    }
-                })
-            }
-        })
+        if (nickname && therol && therank && ranks.indexOf(therol) !== -1) {
+            connection.query("SELECT theimg FROM members WHERE id = ?", [id], (err, resp) => {
+                if (err) {
+                    console.log(err)
+                }
+        
+                else {
+                    connection.query("UPDATE members SET therol = ?, nickname = ?, therank = ?, theimg = ? WHERE id = ?", [therol, nickname, therank, fileName, id], (err, resp2) => {
+                        if (err) {
+                            console.log(err)
+                            res.json({
+                                message: "ERROR :("
+                            })
+                        }
+        
+                        else {
+                            oldImg = resp[0].theimg
+                            fs.unlinkSync(path.join(__dirname, `../public/img/${oldImg}`))
+                            res.json({
+                                message: "UPDATED"
+                            })
+                        }
+                    })
+                }
+            })
+        }
+
+        else {
+            fs.unlinkSync(path.join(__dirname, `../public/img/${fileName}`))
+        }
     }
 
     catch(e) {
-        connection.query("SELECT theimg FROM members WHERE id = ?", [id], (err, resp) => {
-            if (err) {
-                console.log(err)
-            }
-
-            else {
-                fileName = resp[0].theimg
-
-                connection.query("UPDATE members SET therol = ?, nickname = ?, therank = ?, theimg = ? WHERE id = ?", [therol, nickname, therank, fileName, id], (err, resp2) => {
-                    if (err) {
-                        console.log(err)
-                        res.json({message: "FAIL"})
-                    }
-
-                    else {
-                        res.json({message: "NICE"})
-                    }
-                })
-            }
-        })
+        if (nickname && therol && therank && ranks.indexOf(therol) !== -1) {
+            connection.query("SELECT theimg FROM members WHERE id = ?", [id], (err, resp) => {
+                if (err) {
+                    console.log(err)
+                }
+    
+                else {
+                    fileName = resp[0].theimg
+    
+                    connection.query("UPDATE members SET therol = ?, nickname = ?, therank = ?, theimg = ? WHERE id = ?", [therol, nickname, therank, fileName, id], (err, resp2) => {
+                        if (err) {
+                            console.log(err)
+                            res.json({message: "FAIL"})
+                        }
+    
+                        else {
+                            res.json({message: "NICE"})
+                        }
+                    })
+                }
+            })
+        }
     }
     
 })

@@ -41,7 +41,12 @@ $form.addEventListener("submit", async e => {
     })
         .then(async res => await res.json())
         .then(res => {
-            //window.location.href = "index.html"
-            console.log(res)
+            if (res.message === "Fail :(") {
+                console.log(res)
+            }
+
+            else {
+                window.location.href = "index.html"
+            }
         })
 })
